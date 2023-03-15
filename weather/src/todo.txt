@@ -1,0 +1,4 @@
+1.Dodac wyszkukiwanie godzinnych statystyk
+2.Dodać dzienne statystyki (wschod slonca ,zachod slonca, temperatura o poranku i temperatura o zachodzie
+3.Dodac tworzenie uzytkoanikw w celu generowania klucza do api
+4.
