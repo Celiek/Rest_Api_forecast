@@ -8,8 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "api/createuser")
 public class CreateUser {
 
-    @GetMapping(path="user")
+//    @GetMapping(path="user")
+//    public String createUser(){
+//        return "UserCreated";
+//    }
+
+    @GetMapping(path = "createuser")
     public String createUser(){
-        return "UserCreated";
+
+
+        return "true";
     }
+
 }
