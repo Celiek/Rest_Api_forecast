@@ -8,6 +8,8 @@ public class User {
     private String login;
     private String password;
     private String apiKey;
+
+    private String name;
     @Id
     @SequenceGenerator(
             name="user_sequence",
@@ -20,15 +22,16 @@ public class User {
 
     private String email;
 
-    public User(){
-
+    public User(String name){
+        this.name = name;
     }
 
 
-    public User(String login, String password, String apiKey, Long id, String email) {
+    public User(String login, String password, String apiKey, String name, Long id, String email) {
         this.login = login;
         this.password = password;
         this.apiKey = apiKey;
+        this.name = name;
         this.id = id;
         this.email = email;
     }
@@ -71,5 +74,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

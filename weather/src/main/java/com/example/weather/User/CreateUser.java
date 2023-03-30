@@ -15,8 +15,6 @@ public class CreateUser {
 
     @GetMapping(path = "createuser")
     public String createUser(){
-
-
         return "true";
     }
 
