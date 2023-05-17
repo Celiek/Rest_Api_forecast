@@ -25,8 +25,10 @@ public class UserController {
     public void registerNewUser(@RequestBody User user) {
         userService.addNewUser(user);
     }
+
     //for debug purpose only,
-    //further i will remowe it
+    //further i will remove it
+    /*
     public void deleteStudent(@PathVariable("userId") Long userId){
         userService.deleteUser(userId);
     }
@@ -36,5 +38,5 @@ public class UserController {
                            @RequestParam(required = false)String email){
         userService.updateUser(userId, name, email);
     }
-
+    */
 }

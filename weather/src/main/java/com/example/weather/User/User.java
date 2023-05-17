@@ -3,7 +3,7 @@ package com.example.weather.User;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "dane uzytkownikow")
 public class User {
     private String login;
     private String password;
@@ -28,12 +28,16 @@ public class User {
 
 
     public User(String login, String password, String apiKey, String name, Long id, String email) {
+        this.id = id;
         this.login = login;
         this.password = password;
         this.apiKey = apiKey;
         this.name = name;
-        this.id = id;
         this.email = email;
+    }
+
+    public User(){
+
     }
 
     public String getLogin() {
