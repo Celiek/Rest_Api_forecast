@@ -1,9 +1,13 @@
 package com.example.weather.MeteoOpad;
+import jakarta.persistence.*;
 
+
+@Entity
+@Table(name= "dane meteorologiczne klimat")
 public class MeteoKlimat {
-    private String kod_stacji;
+    private Long kod_stacji;
     private String nazwa_stacji;
-    private long rok;
+    private int rok;
     private byte miesiac;
     private byte dzien;
     private float maksymalna_temperatura_dobowa;
@@ -20,8 +24,8 @@ public class MeteoKlimat {
     private int wysokosc_pokrywy_snieznej;
     private byte PKSN;
 
-    public MeteoKlimat(String kod_stacji, String nazwa_stacji,
-                       long rok, byte miesiac,
+    public MeteoKlimat(Long kod_stacji, String nazwa_stacji,
+                       int rok, byte miesiac,
                        byte dzien, float maksymalna_temperatura_dobowa,
                        byte tmax, float minimalna_temperatura_dobowa,
                        byte tmin, float srednia_temperatura_dobowa,
@@ -49,7 +53,7 @@ public class MeteoKlimat {
         this.PKSN = PKSN;
     }
 
-    public String getKod_stacji() {
+    public Long getKod_stacji() {
         return kod_stacji;
     }
 
@@ -121,7 +125,7 @@ public class MeteoKlimat {
         return PKSN;
     }
 
-    public void setKod_stacji(String kod_stacji) {
+    public void setKod_stacji(Long kod_stacji) {
         this.kod_stacji = kod_stacji;
     }
 
@@ -129,7 +133,7 @@ public class MeteoKlimat {
         this.nazwa_stacji = nazwa_stacji;
     }
 
-    public void setRok(long rok) {
+    public void setRok(int rok) {
         this.rok = rok;
     }
 

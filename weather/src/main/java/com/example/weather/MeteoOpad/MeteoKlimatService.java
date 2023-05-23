@@ -1,20 +1,21 @@
 package com.example.weather.MeteoOpad;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MeteoKlimatService {
-    private final MeteoRepository meteoRepository;
+    private final OpadRepository meteoRepository;
 
     @Autowired
-    public MeteoKlimatService(MeteoRepository meteoRepository) {
+    public MeteoKlimatService(OpadRepository meteoRepository) {
         this.meteoRepository = meteoRepository;
     }
 
-    public List<MeteoRepository> getMeteoData( String email, String rok, String miesiac, String dzien){
-        return meteoRepository.findMeteoByDate(email, rok, miesiac, dzien);
+    public List<MeteoKlimat> getMeteoData(String api_key, String place, int rok, int miesiac, int dzien){
+        return meteoRepository.findMeteoByDate(api_key, place, rok, miesiac, dzien);
     }
 
 
