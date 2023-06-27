@@ -1,11 +1,13 @@
 package com.example.weather.MeteoKlimat;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="dane meteorologiczne ")
+@Table(name="dane_meteorologiczne_opad")
 public class KlimatOpad {
+    @Id
     private Long kod_stacji;
     private int rok;
 
@@ -133,6 +135,11 @@ public class KlimatOpad {
     private int gatunek_sniegu;
     private int GATS;
     private char rodzaj_pokrywy_snieznej;
+
+    public KlimatOpad()
+    {
+
+    }
 
     public KlimatOpad(Long kod_stacji, int rok, int miesiac, int dzien, float suma_dobowa_opadow, int SMDB, char rodzaj_opadu, int wysokosc_pokrywy_snieznej, int PKSN, int wysokosc_swiezospadlego_sniegu, int HSS, int gatunek_sniegu, int GATS, char rodzaj_pokrywy_snieznej) {
         this.kod_stacji = kod_stacji;

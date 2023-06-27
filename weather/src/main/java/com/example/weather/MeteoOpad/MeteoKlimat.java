@@ -1,10 +1,13 @@
 package com.example.weather.MeteoOpad;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name= "dane meteorologiczne klimat")
+@Table(name= "dane_meteorologiczne_klimat")
 public class MeteoKlimat {
+    @Id
     private Long kod_stacji;
     private String nazwa_stacji;
     private int rok;
@@ -196,4 +199,6 @@ public class MeteoKlimat {
     public void setPKSN(byte PKSN) {
         this.PKSN = PKSN;
     }
+
+
 }

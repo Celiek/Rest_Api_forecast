@@ -1,4 +1,4 @@
-package com.example.weather.MeteoOpad;
+package com.example.weather.MeteoKlimat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,21 +9,19 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/opad")
-public class GetMeteoByPlace {
+@RequestMapping(path = "/api/klimat")
+public class GetKlimatByPlace {
 
     @Autowired
-    private OpadRepository meteoRepository;
+    private KlimatRepository klimatRepository;
 
     @GetMapping("/byplace")
-    public List<MeteoKlimat> findMeteoOpadByPlace(String api_key, String place){
-        //dane daty
+    public List<KlimatOpad> findKlimatByPlace(String api_key, String place){
         LocalDate currentDate = LocalDate.now();
         int day = currentDate.getDayOfMonth();
         int month = currentDate.getMonthValue();
 
-        List<MeteoKlimat> meteo = meteoRepository.
-                findMeteoOpadByPlace( api_key,  place,  month,  day );
-        return meteo;
+        List<KlimatOpad> klimat = klimatRepository.findOpadByPlace(api_key, place, month, day);
+        return klimat;
     }
 }

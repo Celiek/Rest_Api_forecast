@@ -3,12 +3,11 @@ package com.example.weather.User;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "dane uzytkownikow")
+@Table(name = "dane_uzytkownikow")
 public class User {
     private String login;
     private String password;
     private String apiKey;
-
     private String name;
     @Id
     @SequenceGenerator(

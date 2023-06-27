@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "api/createuser")
 public class CreateUser {
-//klasa niepotrzebna --usunąć
-//    @GetMapping(path="user")
-//    public String createUser(){
-//        return "UserCreated";
-//    }
 
     @GetMapping(path = "createuser")
     public String createUser(){

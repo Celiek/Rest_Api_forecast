@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface UsersRepository extends JpaRepository<User, Long> {
 
     //query wyszukujace wszystkie dane z native SQL
-    @Query( value = "SELECT * FROM \"dane uzytkownikow\" WHERE u.email = :email",
+    @Query( value = "SELECT * FROM dane_uzytkownikow WHERE u.email = :email",
             nativeQuery = true)
     Optional<User> findUserByEmail(@Param("email") String email);
 }
