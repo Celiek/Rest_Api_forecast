@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+
 import java.util.List;
 
 @RestController
@@ -15,12 +16,13 @@ public class GetHydroByPlace {
     private HydroRepository hydroRepository;
 
     @GetMapping("/byplace")
-    public List<HydroKlimat> findHydroByPlace(@RequestParam("api_key") String api_key, @RequestParam("place") String place){
+    public List<HydroKlimat> findHydroByPlace(@RequestParam(value = "api", defaultValue = "123") String api,
+                                              @RequestParam(value = "place", defaultValue = "CHAŁUPKI") String place){
         LocalDate currentdate = LocalDate.now();
         int day = currentdate.getDayOfMonth();
         int month = currentdate.getDayOfMonth();
 
-        List<HydroKlimat> hydro = hydroRepository.findHydroByPlace(api_key,place,month,day);
+        List<HydroKlimat> hydro = hydroRepository.findHydroByPlace(api,place,month,day);
         return hydro;
     }
 

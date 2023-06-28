@@ -3,7 +3,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
 @Entity
 @Table(name= "dane_meteorologiczne_klimat")
 public class MeteoKlimat {
@@ -199,6 +198,5 @@ public class MeteoKlimat {
     public void setPKSN(byte PKSN) {
         this.PKSN = PKSN;
     }
-
 
 }

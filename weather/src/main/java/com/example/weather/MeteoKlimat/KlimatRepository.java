@@ -1,6 +1,5 @@
 package com.example.weather.MeteoKlimat;
 
-import com.example.weather.User.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -18,15 +17,12 @@ public interface KlimatRepository extends JpaRepository<KlimatOpad,Long> {
                                     @Param("month") int month,
                                     @Param("day") int day);
 
-    @Query(value = "SELECT * FROM dane_meteorologiczne_klimat h " +
+    @Query(value = "SELECT * FROM dane_meteorologiczne_opad h " +
             "WHERE EXISTS (SELECT * FROM dane_uzytkownikow u WHERE u.api_key = :api) " +
-            "AND h.nazwa_stacji = :place AND h.rok = 2021 AND h.miesiac = :month AND h.dzien = :day ",
+            "AND h.nazwa_stacji = :place AND h.rok = 2018 AND h.miesiac = :month AND h.dzien = :day ",
             nativeQuery = true)
     List<KlimatOpad> findOpadByPlace(@Param("api") String api,
                                      @Param("place") String place,
                                      @Param("month") int month,
                                      @Param("day") int day);
-
-
-
 }

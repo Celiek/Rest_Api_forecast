@@ -5,18 +5,60 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="dane_meteorologiczne_opad")
+@Table(name = "dane_meteorologiczne_opad")
 public class KlimatOpad {
     @Id
-    private Long kod_stacji;
+    private int kod_stacji;
+    private String nazwa_stacji;
     private int rok;
+    private int miesiac;
+    private int dzien;
+    private float suma_dobowa_opadow;
+    private Integer SMDB;
+    private char rodzaj_opadu;
+    private int wysokosc_pokrywy_snieznej;
+    private int PKSN;
+    private int wysokosc_swiezospadlego_sniegu;
+    private int HSS;
+    private Integer gatunek_sniegu;
+    private int GATS;
+    private String rodzaj_pokrywy_snieznej;
 
-    public Long getKod_stacji() {
+    public KlimatOpad(int kod_stacji, String nazwa_stacji, int rok, int miesiac, int dzien, float suma_dobowa_opadow, Integer SMDB, char rodzaj_opadu, int wysokosc_pokrywy_snieznej, int PKSN, int wysokosc_swiezospadlego_sniegu, int HSS, Integer gatunek_sniegu, int GATS, String rodzaj_pokrywy_snieznej) {
+        this.kod_stacji = kod_stacji;
+        this.nazwa_stacji = nazwa_stacji;
+        this.rok = rok;
+        this.miesiac = miesiac;
+        this.dzien = dzien;
+        this.suma_dobowa_opadow = suma_dobowa_opadow;
+        this.SMDB = SMDB;
+        this.rodzaj_opadu = rodzaj_opadu;
+        this.wysokosc_pokrywy_snieznej = wysokosc_pokrywy_snieznej;
+        this.PKSN = PKSN;
+        this.wysokosc_swiezospadlego_sniegu = wysokosc_swiezospadlego_sniegu;
+        this.HSS = HSS;
+        this.gatunek_sniegu = gatunek_sniegu;
+        this.GATS = GATS;
+        this.rodzaj_pokrywy_snieznej = rodzaj_pokrywy_snieznej;
+    }
+    public  KlimatOpad(){
+
+    }
+
+    public int getKod_stacji() {
         return kod_stacji;
     }
 
-    public void setKod_stacji(Long kod_stacji) {
+    public void setKod_stacji(int kod_stacji) {
         this.kod_stacji = kod_stacji;
+    }
+
+    public String getNazwa_stacji() {
+        return nazwa_stacji;
+    }
+
+    public void setNazwa_stacji(String nazwa_stacji) {
+        this.nazwa_stacji = nazwa_stacji;
     }
 
     public int getRok() {
@@ -51,11 +93,11 @@ public class KlimatOpad {
         this.suma_dobowa_opadow = suma_dobowa_opadow;
     }
 
-    public int getSMDB() {
+    public Integer getSMDB() {
         return SMDB;
     }
 
-    public void setSMDB(int SMDB) {
+    public void setSMDB(Integer SMDB) {
         this.SMDB = SMDB;
     }
 
@@ -103,7 +145,7 @@ public class KlimatOpad {
         return gatunek_sniegu;
     }
 
-    public void setGatunek_sniegu(int gatunek_sniegu) {
+    public void setGatunek_sniegu(Integer gatunek_sniegu) {
         this.gatunek_sniegu = gatunek_sniegu;
     }
 
@@ -115,46 +157,11 @@ public class KlimatOpad {
         this.GATS = GATS;
     }
 
-    public char getRodzaj_pokrywy_snieznej() {
+    public String getRodzaj_pokrywy_snieznej() {
         return rodzaj_pokrywy_snieznej;
     }
 
-    public void setRodzaj_pokrywy_snieznej(char rodzaj_pokrywy_snieznej) {
-        this.rodzaj_pokrywy_snieznej = rodzaj_pokrywy_snieznej;
-    }
-
-    private int miesiac;
-    private int dzien;
-    private float suma_dobowa_opadow;
-    private int SMDB;
-    private char rodzaj_opadu;
-    private int wysokosc_pokrywy_snieznej;
-    private int PKSN;
-    private int wysokosc_swiezospadlego_sniegu;
-    private int HSS;
-    private int gatunek_sniegu;
-    private int GATS;
-    private char rodzaj_pokrywy_snieznej;
-
-    public KlimatOpad()
-    {
-
-    }
-
-    public KlimatOpad(Long kod_stacji, int rok, int miesiac, int dzien, float suma_dobowa_opadow, int SMDB, char rodzaj_opadu, int wysokosc_pokrywy_snieznej, int PKSN, int wysokosc_swiezospadlego_sniegu, int HSS, int gatunek_sniegu, int GATS, char rodzaj_pokrywy_snieznej) {
-        this.kod_stacji = kod_stacji;
-        this.rok = rok;
-        this.miesiac = miesiac;
-        this.dzien = dzien;
-        this.suma_dobowa_opadow = suma_dobowa_opadow;
-        this.SMDB = SMDB;
-        this.rodzaj_opadu = rodzaj_opadu;
-        this.wysokosc_pokrywy_snieznej = wysokosc_pokrywy_snieznej;
-        this.PKSN = PKSN;
-        this.wysokosc_swiezospadlego_sniegu = wysokosc_swiezospadlego_sniegu;
-        this.HSS = HSS;
-        this.gatunek_sniegu = gatunek_sniegu;
-        this.GATS = GATS;
+    public void setRodzaj_pokrywy_snieznej(String rodzaj_pokrywy_snieznej) {
         this.rodzaj_pokrywy_snieznej = rodzaj_pokrywy_snieznej;
     }
 }
