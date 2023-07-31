@@ -15,7 +15,7 @@ public class GetMeteoByDate {
     @Autowired
     private OpadRepository opadRepository;
 
-    @GetMapping("/opadbydate")
+    @GetMapping("/bydate")
     public List<MeteoKlimat> findMeteoByDate(@RequestParam(value = "api") String api,
                                              @RequestParam(value = "place") String place){
         //dzisiejsza data
@@ -25,7 +25,7 @@ public class GetMeteoByDate {
         int year = currentDate.getYear();
 
         List<MeteoKlimat> klimat = opadRepository.
-                findMeteoByDate(api, place,year, month, day);
+                findMeteoByDate("123", "BIAŁOWIEŻA",2022, 5, 20);
         return klimat;
     }
 }

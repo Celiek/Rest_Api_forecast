@@ -8,9 +8,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface OpadRepository extends JpaRepository<MeteoKlimat, Long> {
-    @Query( value = "SELECT * FROM dane_meteorologiczne_klimat h" +
-            "WHERE EXISTS (SELECT 1 FROM dane_uzytkownikow u WHERE u.api_key = :api) " +
-            "AND h.nazwa_stacji = :place AND h.rok = :rok AND h.miesiac = :miesiac AND h.dzien = :dzien )"
+    @Query( value = "SELECT * FROM dane_meteorologiczne_klimat h " +
+            " WHERE EXISTS (SELECT * FROM dane_uzytkownikow u WHERE u.api_key = :api ) " +
+            " AND h.nazwa_stacji = :place AND h.rok = :rok AND h.miesiac = :miesiac AND h.dzien = :dzien"
             , nativeQuery = true)
     List <MeteoKlimat> findMeteoByDate(@Param("api") String api,
                                     @Param("place") String place,
@@ -20,11 +20,11 @@ public interface OpadRepository extends JpaRepository<MeteoKlimat, Long> {
 
     //funkcja ma pobierac dane meteorologiczo opadowe z dnia i miesiaca aktualnego i z roku 2021
 
-    @Query( value = "SELECT * FROM dane_meteorologiczne_klimat h" +
-            "WHERE EXISTS (SELECT * FROM dane_uzytkownikow u WHERE u.api_key = :api) " +
-            "AND h.nazwa_stacji = :place AND h.rok = 2021 AND h.miesiac = :miesiac AND h.dzien = :dzien "
+    @Query( value = "SELECT * FROM dane_meteorologiczne_klimat h " +
+            " WHERE EXISTS (SELECT * FROM dane_uzytkownikow u WHERE u.api_key = :api ) " +
+            " AND h.nazwa_stacji = :place AND h.rok = 2021 AND h.miesiac = :miesiac AND h.dzien = :dzien "
             , nativeQuery = true)
-    List<MeteoKlimat> findMeteoOpadByPlace(@Param("api") String api_key,
+    List<MeteoKlimat> findMeteoOpadByPlace(@Param("api") String api,
                                            @Param("place") String place,
                                            @Param("miesiac") int miesiac,
                                            @Param("dzien") int dzien);

@@ -13,14 +13,14 @@ public class MeteoKlimat {
     private byte miesiac;
     private byte dzien;
     private float maksymalna_temperatura_dobowa;
-    private byte tmax;
+    private int tmax;
     private float minimalna_temperatura_dobowa;
-    private byte tmin;
+    private Integer tmin;
     private float srednia_temperatura_dobowa;
     private byte STD;
     private float temperatura_minimalna_przy_gruncie;
     private byte tmng;
-    private float suma_dobowa_opadow;
+    private double suma_dobowa_opadow;
     private int SMDB;
     private char rodzaj_opadu_SMDB;
     private int wysokosc_pokrywy_snieznej;
@@ -29,10 +29,10 @@ public class MeteoKlimat {
     public MeteoKlimat(Long kod_stacji, String nazwa_stacji,
                        int rok, byte miesiac,
                        byte dzien, float maksymalna_temperatura_dobowa,
-                       byte tmax, float minimalna_temperatura_dobowa,
-                       byte tmin, float srednia_temperatura_dobowa,
+                       int tmax, float minimalna_temperatura_dobowa,
+                       Integer tmin, float srednia_temperatura_dobowa,
                        byte STD, float temperatura_minimalna_przy_gruncie,
-                       byte tmng, float suma_dobowa_opadow, int SMDB,
+                       byte tmng, double suma_dobowa_opadow, int SMDB,
                        char rodzaj_opadu_SMDB, int wysokosc_pokrywy_snieznej,
                        byte PKSN) {
         this.kod_stacji = kod_stacji;
@@ -53,6 +53,10 @@ public class MeteoKlimat {
         this.rodzaj_opadu_SMDB = rodzaj_opadu_SMDB;
         this.wysokosc_pokrywy_snieznej = wysokosc_pokrywy_snieznej;
         this.PKSN = PKSN;
+    }
+
+    public MeteoKlimat(){
+
     }
 
     public Long getKod_stacji() {
@@ -79,7 +83,7 @@ public class MeteoKlimat {
         return maksymalna_temperatura_dobowa;
     }
 
-    public byte getTmax() {
+    public int getTmax() {
         return tmax;
     }
 
@@ -87,7 +91,7 @@ public class MeteoKlimat {
         return minimalna_temperatura_dobowa;
     }
 
-    public byte getTmin() {
+    public Integer getTmin() {
         return tmin;
     }
 
@@ -107,7 +111,7 @@ public class MeteoKlimat {
         return tmng;
     }
 
-    public float getSuma_dobowa_opadow() {
+    public double getSuma_dobowa_opadow() {
         return suma_dobowa_opadow;
     }
 
@@ -151,7 +155,7 @@ public class MeteoKlimat {
         this.maksymalna_temperatura_dobowa = maksymalna_temperatura_dobowa;
     }
 
-    public void setTmax(byte tmax) {
+    public void setTmax(int tmax) {
         this.tmax = tmax;
     }
 
@@ -159,7 +163,7 @@ public class MeteoKlimat {
         this.minimalna_temperatura_dobowa = minimalna_temperatura_dobowa;
     }
 
-    public void setTmin(byte tmin) {
+    public void setTmin(Integer tmin) {
         this.tmin = tmin;
     }
 
@@ -179,7 +183,7 @@ public class MeteoKlimat {
         this.tmng = tmng;
     }
 
-    public void setSuma_dobowa_opadow(float suma_dobowa_opadow) {
+    public void setSuma_dobowa_opadow(double suma_dobowa_opadow) {
         this.suma_dobowa_opadow = suma_dobowa_opadow;
     }
 

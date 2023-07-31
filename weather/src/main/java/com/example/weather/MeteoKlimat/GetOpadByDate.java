@@ -25,7 +25,7 @@ public class GetOpadByDate {
         int day = currentDate.getDayOfMonth();
         int month = currentDate.getMonthValue();
 
-        List<KlimatOpad> klimat = klimatRepository.findOpadByDate(api, place, year, month, day);
+        List<KlimatOpad> klimat = klimatRepository.findOpadByDate(api, place, 2018, 12, 20);
 
         return klimat;
     }

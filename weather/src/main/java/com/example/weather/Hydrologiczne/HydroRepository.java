@@ -41,7 +41,4 @@ public interface HydroRepository extends JpaRepository<HydroKlimat, Long> {
                                                        @Param("year") int year,
                                                        @Param("month")int month,
                                                        @Param("day") int day );
-
-    @Query(value="SELECT * FROM dane_hydrologiczne LIMIT 100", nativeQuery = true)
-    List<HydroKlimat> test();
 }
